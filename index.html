@@ -13,6 +13,7 @@
 <link rel="stylesheet" href="css/sections.css">
 <link rel="stylesheet" href="css/v2.css">
 <link rel="preload" as="image" href="img/jar-apple.png">
+<script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
 
@@ -28,7 +29,7 @@
       <a href="#taste">Вкусы и&nbsp;цены</a>
       <a href="#science">Как это работает</a>
       <a href="#diff">Состав</a>
-      <a href="#how">Как принимать</a>
+      <a href="#how">Просто принимать</a>
       <a href="#story">О&nbsp;бренде</a>
       <a href="#buy">Где купить</a>
     </nav>
@@ -43,58 +44,69 @@
 
 <!-- 1. Верхний баннер: слайдер вкусов + тексты прототипа -->
 <section class="hero" id="hero" aria-roledescription="карусель" aria-label="Вкусы Arquillena">
-  <div class="hero__inner container">
-
-    <div class="hero__text">
-      <div class="hero__eyebrow"><span class="dot"></span>Новинка в&nbsp;функциональном питании</div>
-      <h1 class="hero__title">
-        <span class="t-bold">Коллаген</span> <span class="t-serif">—</span><br class="br-desk">
-        <span class="t-serif">комплекс для</span> <span class="t-bold">суставов</span> <span class="t-serif">и</span>&nbsp;<span class="t-bold">вен</span>
-      </h1>
-      <p class="hero__lead">Сила движения начинается изнутри</p>
-    </div>
-
-    <div class="hero__stage" id="stage">
-      <div class="stage__panel" id="panel" aria-hidden="true"></div>
-      <div class="stage__word" id="word" aria-hidden="true"></div>
-      <div class="stage__badge" id="badge">Для суставов</div>
-
-      <svg class="cube cube--1" viewBox="0 0 60 60" aria-hidden="true"><rect x="4" y="4" width="52" height="52" rx="14" class="cube__body"/><path d="M14 14 Q30 9 44 14" class="cube__shine"/><rect x="10" y="36" width="40" height="14" rx="7" class="cube__shade"/></svg>
-      <svg class="cube cube--2" viewBox="0 0 60 60" aria-hidden="true"><rect x="4" y="4" width="52" height="52" rx="14" class="cube__body"/><path d="M14 14 Q30 9 44 14" class="cube__shine"/><rect x="10" y="36" width="40" height="14" rx="7" class="cube__shade"/></svg>
-      <svg class="cube cube--3" viewBox="0 0 60 60" aria-hidden="true"><rect x="4" y="4" width="52" height="52" rx="14" class="cube__body"/><path d="M14 14 Q30 9 44 14" class="cube__shine"/><rect x="10" y="36" width="40" height="14" rx="7" class="cube__shade"/></svg>
-      <svg class="cube cube--4" viewBox="0 0 60 60" aria-hidden="true"><rect x="4" y="4" width="52" height="52" rx="14" class="cube__body"/><path d="M14 14 Q30 9 44 14" class="cube__shine"/><rect x="10" y="36" width="40" height="14" rx="7" class="cube__shade"/></svg>
-
-      <div class="stage__jar">
-        <div class="jar__float"><div class="jar__slot" id="jarSlot"></div></div>
-        <div class="jar__shadow"></div>
+  <div class="container hb">
+    <div class="hb__left">
+      <div class="hero__text">
+        <div class="hero__eyebrow"><span class="dot"></span>Новинка в&nbsp;функциональном питании</div>
+        <h1 class="hero__title">
+          <span class="t-bold">Коллаген</span> <span class="t-serif">—</span><br>
+          <span class="t-serif">комплекс для</span> <span class="t-bold">суставов</span> <span class="t-serif">и</span>&nbsp;<span class="t-bold">вен</span>
+        </h1>
+        <p class="hero__lead">Сила движения начинается изнутри</p>
       </div>
 
-      <ul class="stage__chips" id="chips" aria-hidden="true"></ul>
+      <div class="hb__grid">
+        <!-- Плитка 1: маленький слайдер вкусов -->
+        <div class="hb__tile hb__slider" id="stage">
+          <div class="stage__panel" id="panel" aria-hidden="true"></div>
+          <div class="stage__word" id="word" aria-hidden="true"></div>
+          <div class="stage__badge" id="badge">Для суставов</div>
+          <div class="stage__jar">
+            <div class="jar__float"><div class="jar__slot" id="jarSlot"></div></div>
+            <div class="jar__shadow"></div>
+          </div>
+          <ul class="stage__chips" id="chips" aria-hidden="true"></ul>
+          <div class="hb__flavor" id="hbFlavor" aria-live="polite">Яблоко</div>
+          <button class="stage__arrow stage__arrow--prev" type="button" aria-label="Предыдущий вкус">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+          </button>
+          <button class="stage__arrow stage__arrow--next" type="button" aria-label="Следующий вкус">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+          </button>
+        </div>
 
-      <button class="stage__arrow stage__arrow--prev" type="button" aria-label="Предыдущий вкус">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
-      </button>
-      <button class="stage__arrow stage__arrow--next" type="button" aria-label="Следующий вкус">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
-      </button>
-    </div>
-
-    <div class="hero__picker">
-      <div class="picker" role="tablist" aria-label="Выберите вкус" id="picker"></div>
-    </div>
-
-    <div class="hero__buy">
-      <div class="buy__info">
-        <div class="buy__name" id="buyName" aria-live="polite">Комплекс для суставов, яблоко</div>
-        <div class="buy__meta">500&nbsp;г</div>
-      </div>
-      <div class="buy__price">2&nbsp;990&nbsp;₽</div>
-      <div class="buy__actions">
-        <a class="btn btn--accent btn--cart" href="#taste" id="buyBtn">
-          Купить в&nbsp;ОРТЕКЕ
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        <!-- Плитка 2: полезная привычка -->
+        <a class="hb__tile hb__dark hb__habit" href="#how">
+          <span class="hb__habit-kicker">Полезная привычка</span>
+          <span class="hb__habit-title">1&nbsp;ложка<br>в&nbsp;день</span>
+          <span class="hb__habit-link">Как принимать <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
         </a>
+
+        <!-- Плитка 3: кнопка покупки (выбор вкуса скрыт, он управляет слайдером) -->
+        <div class="hb__cta hero__buy">
+          <div class="hb__hidden" aria-hidden="true">
+            <div class="buy__name" id="buyName">Комплекс для суставов, яблоко</div>
+            <div class="picker" role="tablist" aria-label="Выберите вкус" id="picker"></div>
+          </div>
+          <a class="btn btn--accent btn--cart" href="#taste" id="buyBtn">
+            Купить в&nbsp;ОРТЕКЕ
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
       </div>
+    </div>
+
+    <!-- Справа: фото девушки -->
+    <div class="hb__photo">
+      <svg class="hb__facets" viewBox="0 0 600 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <defs>
+          <linearGradient id="hbF1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFFFF" stop-opacity=".9"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/></linearGradient>
+          <linearGradient id="hbF2" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C9A9CC" stop-opacity=".55"/><stop offset="1" stop-color="#C9A9CC" stop-opacity="0"/></linearGradient>
+        </defs>
+        <path d="M-60 120 L330 300 L40 640 Z" fill="url(#hbF1)"/>
+        <path d="M660 40 L360 260 L640 520 Z" fill="url(#hbF2)"/>
+      </svg>
+      <img class="hb__girl" src="img/hero-girl-jelly.png" alt="Девушка с удовольствием ест ягодное желе с ложки" width="1216" height="832" fetchpriority="high">
     </div>
   </div>
 
@@ -120,12 +132,6 @@
     </ul>
   </div>
 
-  <div class="ticker" aria-hidden="true">
-    <div class="ticker__track">
-      <span>яблоко</span><i>✦</i><span>вишня</span><i>✦</i><span>малина</span><i>✦</i><span>гранат</span><i>✦</i><span>Сила движения начинается изнутри</span><i>✦</i>
-      <span>яблоко</span><i>✦</i><span>вишня</span><i>✦</i><span>малина</span><i>✦</i><span>гранат</span><i>✦</i><span>Сила движения начинается изнутри</span><i>✦</i>
-    </div>
-  </div>
 </section>
 
 <!-- 2. Вкусы с ценой -->
@@ -155,26 +161,26 @@
       <article class="flavor" style="--g1:#7DB544; --g2:#3B6E1C; --fc:#3F7420" data-reveal>
         <h3 class="flavor__name">яблоко</h3>
         <div class="flavor__media"><img src="img/jar-apple.png" alt="Банка Arquillena, комплекс для суставов с натуральным соком яблока" width="354" height="354" loading="lazy"></div>
-        <div class="flavor__row"><span class="flavor__line">для суставов</span><img class="flavor__fruit" src="img/fruit-apple.png" alt="Яблоко" width="72" height="72" loading="lazy"></div>
-        <div class="flavor__buy"><span class="flavor__price">2&nbsp;990&nbsp;₽</span><a class="flavor__btn" href="#">Купить</a></div>
+        <div class="flavor__row"><span class="flavor__line">для суставов</span></div>
+        <div class="flavor__buy"><span class="flavor__price">4&nbsp;999&nbsp;₽</span><a class="flavor__btn" href="#">Купить</a></div>
       </article>
       <article class="flavor" style="--g1:#D73F4B; --g2:#8A1020; --fc:#A3192A" data-reveal>
         <h3 class="flavor__name">вишня</h3>
         <div class="flavor__media"><img src="img/jar-cherry.png" alt="Банка Arquillena, комплекс для суставов с натуральным соком вишни" width="354" height="354" loading="lazy"></div>
-        <div class="flavor__row"><span class="flavor__line">для суставов</span><img class="flavor__fruit" src="img/fruit-cherry.png" alt="Вишня" width="72" height="72" loading="lazy"></div>
-        <div class="flavor__buy"><span class="flavor__price">2&nbsp;990&nbsp;₽</span><a class="flavor__btn" href="#">Купить</a></div>
+        <div class="flavor__row"><span class="flavor__line">для суставов</span></div>
+        <div class="flavor__buy"><span class="flavor__price">4&nbsp;999&nbsp;₽</span><a class="flavor__btn" href="#">Купить</a></div>
       </article>
       <article class="flavor" style="--g1:#E3528A; --g2:#9E1549; --fc:#B81E58" data-reveal>
         <h3 class="flavor__name">малина</h3>
         <div class="flavor__media"><img src="img/jar-raspberry.png" alt="Банка Arquillena, комплекс для вен с натуральным соком малины" width="354" height="354" loading="lazy"></div>
-        <div class="flavor__row"><span class="flavor__line">для вен</span><img class="flavor__fruit" src="img/fruit-raspberry.png" alt="Малина" width="72" height="72" loading="lazy"></div>
-        <div class="flavor__buy"><span class="flavor__price">2&nbsp;990&nbsp;₽</span><a class="flavor__btn" href="#">Купить</a></div>
+        <div class="flavor__row"><span class="flavor__line">для вен</span></div>
+        <div class="flavor__buy"><span class="flavor__price">4&nbsp;999&nbsp;₽</span><a class="flavor__btn" href="#">Купить</a></div>
       </article>
       <article class="flavor" style="--g1:#AE2955; --g2:#560822; --fc:#6E0E2C" data-reveal>
         <h3 class="flavor__name">гранат</h3>
         <div class="flavor__media"><img src="img/jar-pomegranate.png" alt="Банка Arquillena, комплекс для вен с натуральным соком граната" width="354" height="354" loading="lazy"></div>
-        <div class="flavor__row"><span class="flavor__line">для вен</span><img class="flavor__fruit" src="img/fruit-pomegranate.png" alt="Гранат" width="72" height="72" loading="lazy"></div>
-        <div class="flavor__buy"><span class="flavor__price">2&nbsp;990&nbsp;₽</span><a class="flavor__btn" href="#">Купить</a></div>
+        <div class="flavor__row"><span class="flavor__line">для вен</span></div>
+        <div class="flavor__buy"><span class="flavor__price">4&nbsp;999&nbsp;₽</span><a class="flavor__btn" href="#">Купить</a></div>
       </article>
     </div>
   </div>
@@ -184,14 +190,14 @@
 <section class="section jelly care">
   <div class="container jelly__grid">
     <div class="jelly__media" data-reveal>
-      <div class="arch arch--tall"><img src="img/photo-cherry-fall.jpg" alt="Вишни и кубики вишнёвого желе" loading="lazy" width="726" height="1500"></div>
+      <div class="arch arch--tall"><img src="img/people-morning-2.jpg" alt="Девушка утром потягивается в постели у окна" loading="lazy" width="816" height="1224"></div>
       <div class="arch arch--small arch--jar"><img src="img/jar-cherry-open.png" alt="Открытая банка Arquillena, комплекс для суставов с соком вишни" loading="lazy" width="900" height="767"></div>
-      <div class="jelly__sticker"><b>Без</b> таблеток<br>и&nbsp;порошков</div>
+      <div class="jelly__sticker"><b>Нежное</b> ягодное<br>желе</div>
     </div>
     <div class="jelly__content">
       <div class="eyebrow" data-reveal><span class="dot"></span>Забота о&nbsp;движении</div>
       <h2 class="h2" data-reveal><span class="t-serif">Забота,</span> <span class="t-bold">которая приносит</span><br><span class="t-bold">удовольствие</span></h2>
-      <p class="lead" data-reveal>Никаких таблеток и&nbsp;порошков. Ложка нежного ягодного желе утром&nbsp;— маленький ритуал, который хочется повторять. А&nbsp;внутри работает формула для суставов или вен.</p>
+      <p class="lead" data-reveal>Вкусный ежедневный ритуал, который делает поддержку суставов и&nbsp;вен лёгкой и&nbsp;приятной привычкой. Коллаген в&nbsp;форме желе легко усваивается, а&nbsp;одна ложка в&nbsp;день&nbsp;— это несколько приятных минут, посвящённых только себе.</p>
       <ul class="care__words" data-reveal>
         <li>Питание</li><li>Восстановление</li><li>Защита</li>
       </ul>
@@ -277,32 +283,32 @@
     <div class="diff__grid fx-grid">
       <article class="fx" data-reveal>
         <header class="fx__head">
-          <span class="fx__kicker">Коллаген · комплекс для</span>
+          <span class="fx__kicker">Коллаген · комплекс</span>
           <div class="fx__jars"><img src="img/jar-apple.png" alt="" width="354" height="354" loading="lazy"><img src="img/jar-cherry.png" alt="" width="354" height="354" loading="lazy"></div>
-          <h3 class="fx__word">суставов</h3>
+          <h3 class="fx__word">для суставов</h3>
         </header>
         <p class="fx__why">Для поддержки подвижности и&nbsp;комфорта опорно-двигательного аппарата.</p>
-        <div class="fx__flavors"><span class="fx__label">Вкусы</span><span><img src="img/fruit-apple.png" alt="" width="44" height="44">яблоко</span><span><img src="img/fruit-cherry.png" alt="" width="44" height="44">вишня</span></div>
+        <div class="fx__flavors"><span class="fx__label">Вкусы</span><span><i class="fx__dot" style="--c:#7DB544"></i>яблоко</span><span><i class="fx__dot" style="--c:#D73F4B"></i>вишня</span></div>
         <div class="fx__spec">
           <div class="fx__spec-head"><span class="fx__label">Активные компоненты</span><span class="fx__note">на&nbsp;порцию 17&nbsp;г</span></div>
           <div class="fx__group"><span class="fx__sub">Компоненты хряща</span><ul class="fx__list"><li><span class="fx__name">Глюкозамин</span><span class="fx__dose">1190<small>мг</small></span></li><li><span class="fx__name">Хондроитин</span><span class="fx__dose">1360<small>мг</small></span></li></ul></div><div class="fx__group"><span class="fx__sub">Растительные компоненты</span><ul class="fx__list"><li><span class="fx__name">Куркума</span><span class="fx__dose">425<small>мг</small></span></li><li><span class="fx__name">Босвеллия</span><span class="fx__dose">408<small>мг</small></span></li></ul></div>
         </div>
-        <footer class="fx__foot"><span class="fx__price">от&nbsp;<b>2&nbsp;990&nbsp;₽</b></span><a class="btn btn--brand" href="#taste">Выбрать вкус и&nbsp;купить<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></footer>
+        <footer class="fx__foot"><span class="fx__price">от&nbsp;<b>4&nbsp;999&nbsp;₽</b></span><a class="btn btn--brand" href="#taste">Выбрать вкус и&nbsp;купить<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></footer>
       </article>
 
       <article class="fx" data-reveal>
         <header class="fx__head">
-          <span class="fx__kicker">Коллаген · комплекс для</span>
+          <span class="fx__kicker">Коллаген · комплекс</span>
           <div class="fx__jars"><img src="img/jar-raspberry.png" alt="" width="354" height="354" loading="lazy"><img src="img/jar-pomegranate.png" alt="" width="354" height="354" loading="lazy"></div>
-          <h3 class="fx__word">вен</h3>
+          <h3 class="fx__word">для вен</h3>
         </header>
         <p class="fx__why">Для поддержки венозных сосудов&nbsp;— для тех, кто заботится о&nbsp;тонусе вен и&nbsp;лёгкости в&nbsp;ногах.</p>
-        <div class="fx__flavors"><span class="fx__label">Вкусы</span><span><img src="img/fruit-raspberry.png" alt="" width="44" height="44">малина</span><span><img src="img/fruit-pomegranate.png" alt="" width="44" height="44">гранат</span></div>
+        <div class="fx__flavors"><span class="fx__label">Вкусы</span><span><i class="fx__dot" style="--c:#E3528A"></i>малина</span><span><i class="fx__dot" style="--c:#AE2955"></i>гранат</span></div>
         <div class="fx__spec">
           <div class="fx__spec-head"><span class="fx__label">Активные компоненты</span><span class="fx__note">на&nbsp;порцию 17&nbsp;г</span></div>
           <div class="fx__group"><span class="fx__sub">Антиоксидант</span><ul class="fx__list"><li><span class="fx__name">Ресвератрол</span><span class="fx__dose">425<small>мг</small></span></li></ul></div><div class="fx__group"><span class="fx__sub">Растительные компоненты</span><ul class="fx__list"><li><span class="fx__name">Конский каштан</span><span class="fx__dose">306<small>мг</small></span></li><li><span class="fx__name">Листья красного винограда</span><span class="fx__dose">340<small>мг</small></span></li></ul></div><div class="fx__group"><span class="fx__sub">Увлажняющий компонент</span><ul class="fx__list"><li><span class="fx__name">Гиалуроновая кислота</span><span class="fx__dose">646<small>мг</small></span></li></ul></div>
         </div>
-        <footer class="fx__foot"><span class="fx__price">от&nbsp;<b>2&nbsp;990&nbsp;₽</b></span><a class="btn btn--brand" href="#taste">Выбрать вкус и&nbsp;купить<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></footer>
+        <footer class="fx__foot"><span class="fx__price">от&nbsp;<b>4&nbsp;999&nbsp;₽</b></span><a class="btn btn--brand" href="#taste">Выбрать вкус и&nbsp;купить<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></footer>
       </article>
     </div>
   </div>
@@ -323,14 +329,14 @@
         <img class="live__jar live__jar--l" src="img/jar-open-apple.png" alt="" width="1000" height="853" loading="lazy">
         <img class="live__jar live__jar--r" src="img/jar-cherry-open.png" alt="" width="1000" height="852" loading="lazy">
         <img class="live__jar live__jar--c" src="img/jar-open-pomegranate.png" alt="" width="1000" height="852" loading="lazy">
-        <svg class="live__cube live__cube--1" viewBox="0 0 60 60" aria-hidden="true"><rect x="4" y="4" width="52" height="52" rx="14" class="cube__body"/><path d="M14 14 Q30 9 44 14" class="cube__shine"/><rect x="10" y="36" width="40" height="14" rx="7" class="cube__shade"/></svg><svg class="live__cube live__cube--2" viewBox="0 0 60 60" aria-hidden="true"><rect x="4" y="4" width="52" height="52" rx="14" class="cube__body"/><path d="M14 14 Q30 9 44 14" class="cube__shine"/><rect x="10" y="36" width="40" height="14" rx="7" class="cube__shade"/></svg><svg class="live__cube live__cube--3" viewBox="0 0 60 60" aria-hidden="true"><rect x="4" y="4" width="52" height="52" rx="14" class="cube__body"/><path d="M14 14 Q30 9 44 14" class="cube__shine"/><rect x="10" y="36" width="40" height="14" rx="7" class="cube__shade"/></svg>
+        
       </div>
     </div>
 
     <ol class="live__points">
       <li class="lp" data-reveal>
         <span class="lp__num">01</span>
-        <h3>Вкусно, а&nbsp;не&nbsp;«надо»</h3>
+        <h3>Приятная текстура, чистый вкус</h3>
         <p>Натуральный ягодный или фруктовый сок.</p>
         <ul class="lp__ticks">
           <li><b>Однородная текстура</b>&nbsp;— без комочков</li>
@@ -346,52 +352,66 @@
       <li class="lp" data-reveal>
         <span class="lp__num">03</span>
         <h3>Удобная форма</h3>
-        <p>Гидролизованный коллаген в&nbsp;желе&nbsp;— форма с&nbsp;высокой биодоступностью. Можно есть ложкой или растворить в&nbsp;тёплой воде.</p>
+        <p>Гидролизованный коллаген в&nbsp;желе&nbsp;— форма с&nbsp;высокой биодоступностью.</p>
       </li>
       <li class="lp lp--stat" data-reveal>
         <span class="lp__num">04</span>
         <h3>Низкое содержание сахара</h3>
-        <div class="lp__big"><span data-count="1.7" data-decimals="1">1,7</span><small>г</small></div>
         <p>1,7&nbsp;г углеводов и&nbsp;41&nbsp;ккал на&nbsp;100&nbsp;г продукта.</p>
       </li>
       <li class="lp lp--stat" data-reveal>
         <span class="lp__num">05</span>
         <h3>Высокое содержание белка</h3>
-        <div class="lp__big"><span data-count="8.5" data-decimals="1">8,5</span><small>г</small></div>
         <p>8,5&nbsp;г белка на&nbsp;100&nbsp;г продукта.</p>
       </li>
     </ol>
   </div>
 </section>
 
-<!-- 7. Они разные, но вместе -->
-<section class="section combo">
+<!-- 7. Комплексное предложение: ортопедия ОРТЕКИ снаружи + Arquillena изнутри -->
+<section class="section combo cp" id="combo">
   <div class="container">
     <div class="section__head">
       <div>
         <div class="eyebrow" data-reveal><span class="dot"></span>Комплексный подход</div>
-        <h2 class="h2" data-reveal><span class="t-serif">Поддержка</span> <span class="t-bold">снаружи</span><br><span class="t-serif">и&nbsp;питание</span> <span class="t-bold">изнутри</span></h2>
+        <h2 class="h2" data-reveal><span class="t-serif">Ортопедия ОРТЕКИ</span> <span class="t-bold">снаружи</span><br><span class="t-serif">+&nbsp;Arquillena</span> <span class="t-bold">изнутри</span></h2>
       </div>
-      <p class="lead section__aside" data-reveal>Мы&nbsp;объединяем внешнюю ортопедическую поддержку с&nbsp;питанием и&nbsp;восстановлением, давая людям возможность жить активно и&nbsp;без ограничений. С&nbsp;Arquillena вы&nbsp;не&nbsp;просто корректируете то, что беспокоит. Вы&nbsp;строите прочный, гибкий и&nbsp;здоровый фундамент своего тела.</p>
+      <p class="lead section__aside" data-reveal>Мы&nbsp;объединяем внешнюю ортопедическую поддержку с&nbsp;питанием и&nbsp;восстановлением. Ортопедия ОРТЕКИ фиксирует и&nbsp;разгружает, а&nbsp;Arquillena питает ткани изнутри.</p>
     </div>
-    <div class="combo__cols">
-      <div class="combo__col" data-reveal>
-        <h3 class="combo__label">Суставы</h3>
-        <div class="eq">
-          <span class="eq__tile"><span class="eq__img"><img src="img/ortho-knee.jpg" alt="Ортез на коленный сустав" width="256" height="256" loading="lazy"></span><span class="eq__name">ортезы и&nbsp;бандажи</span></span>
-          <span class="eq__op" aria-hidden="true">+</span>
-          <span class="eq__tile"><span class="eq__img"><img src="img/ortho-insoles.jpg" alt="Ортопедические стельки" width="256" height="256" loading="lazy"></span><span class="eq__name">стельки</span></span>
-          <span class="eq__op" aria-hidden="true">+</span>
-          <span class="eq__tile eq__tile--ours" style="--fc:#4A8226"><span class="eq__img"><img src="img/jar-apple.png" alt="Банка Arquillena, комплекс для суставов" width="354" height="354" loading="lazy"></span><span class="eq__name">комплекс для суставов</span></span>
-        </div>
+
+    <div class="cp-group">
+      <h3 class="cp-group__title" data-reveal><span class="t-serif">Комплексное предложение</span> <span class="t-bold">для&nbsp;суставов</span></h3>
+      <div class="cp-grid">
+        <article class="cp-card" data-reveal>
+          <div class="cp-card__art"><span class="rule__icon--duo cp-card__icon"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M24 4 C24 18 21 26 22 33 C23 40 26 46 26 60 M42 4 C42 18 45 26 44 33 C43 40 40 46 40 60"/><path class="f" d="M22.5 14 H43.5 C45 22 45.5 28 44.8 33 C44 40 41.5 45 41 52 H25 C24.5 45 22 40 21.2 33 C20.5 28 21 22 22.5 14 Z"/><path d="M22.5 14 H43.5 C45 22 45.5 28 44.8 33 C44 40 41.5 45 41 52 H25 C24.5 45 22 40 21.2 33 C20.5 28 21 22 22.5 14 Z"/><path d="M22.4 20 H43.8 M23.2 46 H42.2"/><circle class="hole" cx="33" cy="32" r="5.5"/><rect class="f3" x="18.5" y="22" width="4" height="20" rx="2"/><circle class="f3" cx="20.5" cy="32" r="3"/><circle cx="20.5" cy="32" r="3"/></svg></span></div>
+          <div class="cp-card__body"><h4>Ортезы и&nbsp;бандажи</h4><p><b>+</b> связки, хрящевая и&nbsp;соединительная ткань</p></div>
+        </article>
+        <article class="cp-card" data-reveal>
+          <div class="cp-card__art"><span class="rule__icon--duo cp-card__icon"><svg viewBox="0 0 64 64" aria-hidden="true"><path class="f" d="M33 5 C41 5 46 12 45.5 21 C45 29 41.5 34 41 41 C40.5 49 43 57 35 59 C28 60.5 24.5 55 25 48 C25.5 41 21 35 21 25 C21 13 25.5 5 33 5 Z"/><ellipse class="f3" cx="25.6" cy="31" rx="2.2" ry="7"/><path d="M33 5 C41 5 46 12 45.5 21 C45 29 41.5 34 41 41 C40.5 49 43 57 35 59 C28 60.5 24.5 55 25 48 C25.5 41 21 35 21 25 C21 13 25.5 5 33 5 Z"/><path d="M29 49 C29.5 54 33 55.5 37 54"/><circle class="dot" cx="30" cy="15" r="1.1"/><circle class="dot" cx="35" cy="13.5" r="1.1"/><circle class="dot" cx="39.5" cy="16" r="1.1"/><circle class="dot" cx="32.5" cy="19.5" r="1.1"/><circle class="dot" cx="37.5" cy="21" r="1.1"/></svg></span></div>
+          <div class="cp-card__body"><h4>Стельки, обувь</h4><p><b>+</b> связки, сухожилия и&nbsp;мелкие суставы стопы</p></div>
+        </article>
+        <a class="cp-cta cp-cta--wide" href="#products" data-reveal>
+          <span class="cp-cta__kicker">Arquillena изнутри</span>
+          <span class="cp-cta__title">Коллаген<br>комплекс для суставов</span>
+          <span class="cp-cta__jars"><img src="img/jar-apple.png" alt="" width="354" height="354" loading="lazy"><img src="img/jar-cherry.png" alt="" width="354" height="354" loading="lazy"></span>
+          <span class="cp-cta__link">Выбрать вкус <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
       </div>
-      <div class="combo__col" data-reveal>
-        <h3 class="combo__label">Вены</h3>
-        <div class="eq">
-          <span class="eq__tile"><span class="eq__img"><img src="img/ortho-stockings.jpg" alt="Компрессионный трикотаж" width="256" height="256" loading="lazy"></span><span class="eq__name">компрессионный трикотаж</span></span>
-          <span class="eq__op" aria-hidden="true">+</span>
-          <span class="eq__tile eq__tile--ours" style="--fc:#8A1338"><span class="eq__img"><img src="img/jar-pomegranate.png" alt="Банка Arquillena, комплекс для вен" width="354" height="354" loading="lazy"></span><span class="eq__name">комплекс для вен</span></span>
-        </div>
+    </div>
+
+    <div class="cp-group">
+      <h3 class="cp-group__title" data-reveal><span class="t-serif">Комплексное предложение</span> <span class="t-bold">для&nbsp;вен</span></h3>
+      <div class="cp-grid cp-grid--veins">
+        <article class="cp-card cp-card--wide" data-reveal>
+          <div class="cp-card__art"><span class="rule__icon--duo cp-card__icon"><svg viewBox="0 0 64 64" aria-hidden="true"><path class="f" d="M28 4 H37 C37.3 14 36.6 24 35.6 33 C35 39 34.8 43 35.6 46.5 C36.8 50 41 51.5 47 53 C52.5 54.4 55 56.5 54 58.3 C53.2 59.6 50 60 46 60 H33 C29.6 60 28.4 57.5 28.6 54 C28.9 49 29.6 43 29.4 33 C29.1 24 27.8 14 28 4 Z"/><path class="f3" d="M28 4 H37 C37.1 5.5 37.1 7 37 8.5 H28.1 C28 7 28 5.5 28 4 Z"/><path d="M28 4 H37 C37.3 14 36.6 24 35.6 33 C35 39 34.8 43 35.6 46.5 C36.8 50 41 51.5 47 53 C52.5 54.4 55 56.5 54 58.3 C53.2 59.6 50 60 46 60 H33 C29.6 60 28.4 57.5 28.6 54 C28.9 49 29.6 43 29.4 33 C29.1 24 27.8 14 28 4 Z"/><path class="thin" d="M28.3 15 H37 M28.9 25 H36.4 M29.4 35 H35.4"/></svg></span></div>
+          <div class="cp-card__body"><h4>Компрессионный трикотаж</h4><p><b>+</b> прочность и&nbsp;эластичность стенки вен</p></div>
+        </article>
+        <a class="cp-cta cp-cta--wide" href="#products" data-reveal>
+          <span class="cp-cta__kicker">Arquillena изнутри</span>
+          <span class="cp-cta__title">Коллаген<br>комплекс для вен</span>
+          <span class="cp-cta__jars"><img src="img/jar-raspberry.png" alt="" width="354" height="354" loading="lazy"><img src="img/jar-pomegranate.png" alt="" width="354" height="354" loading="lazy"></span>
+          <span class="cp-cta__link">Выбрать вкус <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
       </div>
     </div>
   </div>
@@ -406,17 +426,18 @@
     </div>
     <div class="history__grid">
       <div class="history__side">
-        <div class="history__years" data-reveal><span data-count="30">30</span><p>лет «Никамед» в&nbsp;ортопедии</p></div>
+        <div class="history__years" data-reveal><span data-count="30">30</span><p>лет «НИКАМЕД» в&nbsp;ортопедии</p></div>
       </div>
       <div class="history__text" data-reveal>
         <p>Каждый день в&nbsp;салонах ОРТЕКИ мы&nbsp;видим, как к&nbsp;людям возвращается свобода движения. Наши врачи и&nbsp;консультанты подбирают ортезы, стельки и&nbsp;компрессионный трикотаж, и&nbsp;человек снова делает первый уверенный шаг, поднимается по&nbsp;лестнице без боли, выходит на&nbsp;утреннюю пробежку.</p>
         <p>Именно этот многолетний опыт научил нас главному: истинная забота начинается глубже. Можно бережно поддержать сустав снаружи, но&nbsp;красота движения рождается изнутри.</p>
-        <p>Так появилась Arquillena. Это наш ответ на&nbsp;вопрос, который мы&nbsp;задаём себе каждый день: что ещё мы&nbsp;можем сделать, чтобы лёгкость и&nbsp;радость движения оставались с&nbsp;вами годами? Arquillena создана врачами и&nbsp;экспертами-нутрициологами в&nbsp;партнёрстве с&nbsp;компанией «Никамед». В&nbsp;ней соединились многолетний опыт, научный подход и&nbsp;наша любовь к&nbsp;движению.</p>
+        <p>Так появилась Arquillena. Это наш ответ на&nbsp;вопрос, который мы&nbsp;задаём себе каждый день: что ещё мы&nbsp;можем сделать, чтобы лёгкость и&nbsp;радость движения оставались с&nbsp;вами годами? Arquillena создана врачами и&nbsp;экспертами-нутрициологами в&nbsp;партнёрстве с&nbsp;компанией «НИКАМЕД». В&nbsp;ней соединились многолетний опыт, научный подход и&nbsp;наша любовь к&nbsp;движению.</p>
         <p class="history__sign">Arquillena. Сила движения начинается изнутри.</p>
       </div>
     </div>
 
     <div class="mission" data-reveal>
+      <div class="mission__photo"><img src="img/people-active-3.jpg" alt="Улыбающиеся девушка и мужчина с ракетками после игры в падел" loading="lazy" width="928" height="832"></div>
       <div class="mission__text">
         <span class="mission__kicker">Миссия Arquillena</span>
         <p class="mission__main">Сложить в&nbsp;целое формулу здоровья: объединить внешнюю ортопедическую поддержку с&nbsp;питанием&nbsp;— чтобы вы&nbsp;жили активно и&nbsp;без ограничений.</p>
@@ -441,22 +462,22 @@
     <div class="who__grid">
       <article class="who__card" data-reveal>
         <div class="who__photo"><img src="https://images.unsplash.com/photo-1758520705254-1e9d913d78ea?w=800&q=75&auto=format&fit=crop" alt="Мужчина и женщина бегают в парке" width="800" height="600" loading="lazy"></div>
-        <h3>Активным и&nbsp;спортивным</h3>
+        <h3>Активный образ жизни</h3>
         <p>Бег, зал, танцы, долгие прогулки&nbsp;— регулярная нагрузка на&nbsp;суставы и&nbsp;связки.</p>
       </article>
       <article class="who__card" data-reveal>
         <div class="who__photo"><img src="https://images.unsplash.com/photo-1544717302-de2939b7ef71?w=800&q=75&auto=format&fit=crop" alt="Женщина работает за ноутбуком" width="800" height="600" loading="lazy"></div>
-        <h3>Тем, кто много стоит или сидит</h3>
+        <h3>Динамичный график</h3>
         <p>Работа на&nbsp;ногах или в&nbsp;офисе, долгие перелёты и&nbsp;поездки за&nbsp;рулём.</p>
       </article>
       <article class="who__card" data-reveal>
         <div class="who__photo"><img src="https://images.unsplash.com/photo-1783698154611-1fdf6b0931be?w=800&q=75&auto=format&fit=crop" alt="Девушка с наколенником сидит на траве" width="800" height="600" loading="lazy"></div>
-        <h3>Тем, кто носит ортопедию</h3>
+        <h3>Ортопедическая поддержка</h3>
         <p>Ортезы, бандажи, стельки или компрессионный трикотаж&nbsp;— поддержка снаружи, коллаген изнутри.</p>
       </article>
       <article class="who__card" data-reveal>
         <div class="who__photo"><img src="https://images.unsplash.com/photo-1545594263-a1022ef1bea3?w=800&q=75&auto=format&fit=crop" alt="Улыбающаяся женщина на прогулке" width="800" height="600" loading="lazy"></div>
-        <h3>Тем, кому за&nbsp;30</h3>
+        <h3>Осознанная забота после&nbsp;30</h3>
         <p>С&nbsp;возрастом собственный синтез коллагена снижается&nbsp;— и&nbsp;поддержка с&nbsp;питанием становится важнее.</p>
       </article>
     </div>
@@ -481,41 +502,81 @@
         <div class="eyebrow" data-reveal><span class="dot"></span>Каталог</div>
         <h2 class="h2" data-reveal><span class="t-serif">Выберите</span> <span class="t-bold">свой комплекс</span></h2>
       </div>
-      <p class="lead section__aside" data-reveal>Полный состав и&nbsp;характеристики&nbsp;— на&nbsp;странице товара</p>
+      <p class="lead section__aside" data-reveal><span class="only-hover">Наведите на&nbsp;карточку, чтобы посмотреть состав.</span><span class="only-touch">Нажмите «Состав» на&nbsp;карточке, чтобы посмотреть состав.</span> Полные характеристики&nbsp;— на&nbsp;странице товара.</p>
     </div>
-    <!-- Те же карточки, что в «Вкусах с ценой», плюс название, состав и «Подробнее» из прототипа -->
-    <div class="taste__grid">
-      <article class="flavor flavor--catalog" style="--g1:#7DB544; --g2:#3B6E1C; --fc:#3F7420" data-reveal>
-        <h3 class="flavor__name">яблоко</h3>
-        <div class="flavor__media"><img src="img/jar-apple.png" alt="Банка Arquillena, комплекс для суставов, яблоко, 500 г" width="354" height="354" loading="lazy"></div>
-        <div class="flavor__row"><span class="flavor__line">для суставов</span><img class="flavor__fruit" src="img/fruit-apple.png" alt="Яблоко" width="72" height="72" loading="lazy"></div>
-        <div class="flavor__info"><span class="flavor__title">Коллаген комплекс для суставов, яблоко, 500&nbsp;г</span><span class="flavor__desc">Коллаген I–III, глюкозамин, хондроитин</span></div>
-        <div class="flavor__buy"><span class="flavor__price">2&nbsp;990&nbsp;₽</span><a class="flavor__btn" href="#">Купить</a></div>
-        <a class="flavor__more" href="#">Подробнее&nbsp;→</a>
+    <!-- Карточки в подаче интернет-магазина; состав — во всплывающем окне при наведении -->
+    <div class="pgrid">
+      <article class="pcard" style="--c:#7DB544" data-reveal>
+        <div class="pcard__media">
+          <span class="pcard__line">Для суставов</span>
+          <img src="img/jar-apple.png" alt="Банка Arquillena, комплекс для суставов, яблоко, 500 г" width="354" height="354" loading="lazy">
+          <button class="pcard__info" type="button" aria-expanded="false" aria-controls="pop-apple">Состав</button>
+        </div>
+        <div class="pcard__body">
+          <span class="pcard__flavor"><i></i>Яблоко</span>
+          <h3 class="pcard__title">Коллаген комплекс для&nbsp;суставов, яблоко</h3>
+          <span class="pcard__meta">500&nbsp;г · натуральный сок яблока</span>
+          <div class="pcard__foot"><span class="pcard__price">4&nbsp;999&nbsp;₽</span><a class="pcard__btn" href="#">Купить</a></div>
+        </div>
+        <div class="pcard__pop" id="pop-apple" role="dialog" aria-label="Состав: яблоко">
+          <div class="pcard__pop-head"><b>Состав</b><span>на&nbsp;порцию 17&nbsp;г</span></div>
+          <p class="pcard__pop-lead">Коллаген I, II, III типов + натуральный сок яблока</p>
+          <ul class="pcard__pop-list"><li><span>Глюкозамин</span><b>1190&nbsp;мг</b></li><li><span>Хондроитин</span><b>1360&nbsp;мг</b></li><li><span>Куркума</span><b>425&nbsp;мг</b></li><li><span>Босвеллия</span><b>408&nbsp;мг</b></li><li><span>Витамин C</span><b>85&nbsp;мг</b></li></ul>
+        </div>
       </article>
-      <article class="flavor flavor--catalog" style="--g1:#D73F4B; --g2:#8A1020; --fc:#A3192A" data-reveal>
-        <h3 class="flavor__name">вишня</h3>
-        <div class="flavor__media"><img src="img/jar-cherry.png" alt="Банка Arquillena, комплекс для суставов, вишня, 500 г" width="354" height="354" loading="lazy"></div>
-        <div class="flavor__row"><span class="flavor__line">для суставов</span><img class="flavor__fruit" src="img/fruit-cherry.png" alt="Вишня" width="72" height="72" loading="lazy"></div>
-        <div class="flavor__info"><span class="flavor__title">Коллаген комплекс для суставов, вишня, 500&nbsp;г</span><span class="flavor__desc">Коллаген I–III, глюкозамин, хондроитин</span></div>
-        <div class="flavor__buy"><span class="flavor__price">2&nbsp;990&nbsp;₽</span><a class="flavor__btn" href="#">Купить</a></div>
-        <a class="flavor__more" href="#">Подробнее&nbsp;→</a>
+      <article class="pcard" style="--c:#D73F4B" data-reveal>
+        <div class="pcard__media">
+          <span class="pcard__line">Для суставов</span>
+          <img src="img/jar-cherry.png" alt="Банка Arquillena, комплекс для суставов, вишня, 500 г" width="354" height="354" loading="lazy">
+          <button class="pcard__info" type="button" aria-expanded="false" aria-controls="pop-cherry">Состав</button>
+        </div>
+        <div class="pcard__body">
+          <span class="pcard__flavor"><i></i>Вишня</span>
+          <h3 class="pcard__title">Коллаген комплекс для&nbsp;суставов, вишня</h3>
+          <span class="pcard__meta">500&nbsp;г · натуральный сок вишни</span>
+          <div class="pcard__foot"><span class="pcard__price">4&nbsp;999&nbsp;₽</span><a class="pcard__btn" href="#">Купить</a></div>
+        </div>
+        <div class="pcard__pop" id="pop-cherry" role="dialog" aria-label="Состав: вишня">
+          <div class="pcard__pop-head"><b>Состав</b><span>на&nbsp;порцию 17&nbsp;г</span></div>
+          <p class="pcard__pop-lead">Коллаген I, II, III типов + натуральный сок вишни</p>
+          <ul class="pcard__pop-list"><li><span>Глюкозамин</span><b>1190&nbsp;мг</b></li><li><span>Хондроитин</span><b>1360&nbsp;мг</b></li><li><span>Куркума</span><b>425&nbsp;мг</b></li><li><span>Босвеллия</span><b>408&nbsp;мг</b></li><li><span>Витамин C</span><b>85&nbsp;мг</b></li></ul>
+        </div>
       </article>
-      <article class="flavor flavor--catalog" style="--g1:#E3528A; --g2:#9E1549; --fc:#B81E58" data-reveal>
-        <h3 class="flavor__name">малина</h3>
-        <div class="flavor__media"><img src="img/jar-raspberry.png" alt="Банка Arquillena, комплекс для вен, малина, 500 г" width="354" height="354" loading="lazy"></div>
-        <div class="flavor__row"><span class="flavor__line">для вен</span><img class="flavor__fruit" src="img/fruit-raspberry.png" alt="Малина" width="72" height="72" loading="lazy"></div>
-        <div class="flavor__info"><span class="flavor__title">Коллаген комплекс для вен, малина, 500&nbsp;г</span><span class="flavor__desc">Коллаген I–III, ресвератрол, конский каштан</span></div>
-        <div class="flavor__buy"><span class="flavor__price">2&nbsp;990&nbsp;₽</span><a class="flavor__btn" href="#">Купить</a></div>
-        <a class="flavor__more" href="#">Подробнее&nbsp;→</a>
+      <article class="pcard" style="--c:#E3528A" data-reveal>
+        <div class="pcard__media">
+          <span class="pcard__line">Для вен</span>
+          <img src="img/jar-raspberry.png" alt="Банка Arquillena, комплекс для вен, малина, 500 г" width="354" height="354" loading="lazy">
+          <button class="pcard__info" type="button" aria-expanded="false" aria-controls="pop-raspberry">Состав</button>
+        </div>
+        <div class="pcard__body">
+          <span class="pcard__flavor"><i></i>Малина</span>
+          <h3 class="pcard__title">Коллаген комплекс для&nbsp;вен, малина</h3>
+          <span class="pcard__meta">500&nbsp;г · натуральный сок малины</span>
+          <div class="pcard__foot"><span class="pcard__price">4&nbsp;999&nbsp;₽</span><a class="pcard__btn" href="#">Купить</a></div>
+        </div>
+        <div class="pcard__pop" id="pop-raspberry" role="dialog" aria-label="Состав: малина">
+          <div class="pcard__pop-head"><b>Состав</b><span>на&nbsp;порцию 17&nbsp;г</span></div>
+          <p class="pcard__pop-lead">Коллаген I, II, III типов + натуральный сок малины</p>
+          <ul class="pcard__pop-list"><li><span>Гиалуроновая кислота</span><b>646&nbsp;мг</b></li><li><span>Ресвератрол</span><b>425&nbsp;мг</b></li><li><span>Листья красного винограда</span><b>340&nbsp;мг</b></li><li><span>Конский каштан</span><b>306&nbsp;мг</b></li><li><span>Витамины C и E</span><b>85&nbsp;и&nbsp;8,5&nbsp;мг</b></li></ul>
+        </div>
       </article>
-      <article class="flavor flavor--catalog" style="--g1:#AE2955; --g2:#560822; --fc:#6E0E2C" data-reveal>
-        <h3 class="flavor__name">гранат</h3>
-        <div class="flavor__media"><img src="img/jar-pomegranate.png" alt="Банка Arquillena, комплекс для вен, гранат, 500 г" width="354" height="354" loading="lazy"></div>
-        <div class="flavor__row"><span class="flavor__line">для вен</span><img class="flavor__fruit" src="img/fruit-pomegranate.png" alt="Гранат" width="72" height="72" loading="lazy"></div>
-        <div class="flavor__info"><span class="flavor__title">Коллаген комплекс для вен, гранат, 500&nbsp;г</span><span class="flavor__desc">Коллаген I–III, ресвератрол, конский каштан</span></div>
-        <div class="flavor__buy"><span class="flavor__price">2&nbsp;990&nbsp;₽</span><a class="flavor__btn" href="#">Купить</a></div>
-        <a class="flavor__more" href="#">Подробнее&nbsp;→</a>
+      <article class="pcard" style="--c:#AE2955" data-reveal>
+        <div class="pcard__media">
+          <span class="pcard__line">Для вен</span>
+          <img src="img/jar-pomegranate.png" alt="Банка Arquillena, комплекс для вен, гранат, 500 г" width="354" height="354" loading="lazy">
+          <button class="pcard__info" type="button" aria-expanded="false" aria-controls="pop-pomegranate">Состав</button>
+        </div>
+        <div class="pcard__body">
+          <span class="pcard__flavor"><i></i>Гранат</span>
+          <h3 class="pcard__title">Коллаген комплекс для&nbsp;вен, гранат</h3>
+          <span class="pcard__meta">500&nbsp;г · натуральный сок граната</span>
+          <div class="pcard__foot"><span class="pcard__price">4&nbsp;999&nbsp;₽</span><a class="pcard__btn" href="#">Купить</a></div>
+        </div>
+        <div class="pcard__pop" id="pop-pomegranate" role="dialog" aria-label="Состав: гранат">
+          <div class="pcard__pop-head"><b>Состав</b><span>на&nbsp;порцию 17&nbsp;г</span></div>
+          <p class="pcard__pop-lead">Коллаген I, II, III типов + натуральный сок граната</p>
+          <ul class="pcard__pop-list"><li><span>Гиалуроновая кислота</span><b>646&nbsp;мг</b></li><li><span>Ресвератрол</span><b>425&nbsp;мг</b></li><li><span>Листья красного винограда</span><b>340&nbsp;мг</b></li><li><span>Конский каштан</span><b>306&nbsp;мг</b></li><li><span>Витамины C и E</span><b>85&nbsp;и&nbsp;8,5&nbsp;мг</b></li></ul>
+        </div>
       </article>
     </div>
   </div>
@@ -525,17 +586,17 @@
 <section class="section how how2" id="how">
   <div class="container">
     <div class="how2__top">
-      <h2 class="h2" data-reveal><span class="t-serif">Как</span> <span class="t-bold">принимать</span></h2>
+      <h2 class="h2" data-reveal><span class="t-serif">Просто</span> <span class="t-bold">принимать</span></h2>
       <!-- Ложка с желе крупно, правый край уходит в прозрачность -->
       <div class="how2__stage" data-reveal aria-hidden="true">
         <img class="how2__spoon" src="img/spoon-jelly.png" alt="" width="978" height="370" loading="lazy">
-        <svg class="live__cube how2__cube--1" viewBox="0 0 60 60" aria-hidden="true"><rect x="4" y="4" width="52" height="52" rx="14" class="cube__body"/><path d="M14 14 Q30 9 44 14" class="cube__shine"/><rect x="10" y="36" width="40" height="14" rx="7" class="cube__shade"/></svg><svg class="live__cube how2__cube--2" viewBox="0 0 60 60" aria-hidden="true"><rect x="4" y="4" width="52" height="52" rx="14" class="cube__body"/><path d="M14 14 Q30 9 44 14" class="cube__shine"/><rect x="10" y="36" width="40" height="14" rx="7" class="cube__shade"/></svg><svg class="live__cube how2__cube--3" viewBox="0 0 60 60" aria-hidden="true"><rect x="4" y="4" width="52" height="52" rx="14" class="cube__body"/><path d="M14 14 Q30 9 44 14" class="cube__shine"/><rect x="10" y="36" width="40" height="14" rx="7" class="cube__shade"/></svg>
+        
       </div>
     </div>
     <dl class="rules rules--cols" data-reveal>
         <div class="rule">
           <span class="rule__icon rule__icon--duo"><svg viewBox="0 0 64 64" aria-hidden="true"><path class="f" d="M12 36 L22 31 L31 35 L21 40 Z"/><path class="f2" d="M12 36 V43 L21 47 V40 Z"/><path class="f3" d="M21 40 V47 L31 42 V35 Z"/><path d="M12 36 L22 31 L31 35 L21 40 Z M12 36 V43 L21 47 L31 42 V35 M21 40 V47"/><path d="M6 46 C6 54 16 58 26 55 C34 52 40 46 38 41"/><path d="M38 41 L58 14"/></svg></span>
-          <dt>Сколько</dt><dd>1&nbsp;ст. ложка или 1&nbsp;стик в&nbsp;день</dd>
+          <dt>Сколько</dt><dd>1&nbsp;столовая ложка в&nbsp;день</dd>
         </div>
         <div class="rule">
           <span class="rule__icon rule__icon--duo"><svg viewBox="0 0 64 64" aria-hidden="true"><path class="f" d="M32 32 L32 10 A22 22 0 0 1 32 54 Z"/><circle cx="32" cy="32" r="22"/><path d="M32 18 V32 L41 38"/><path d="M32 13.5 V15.5 M32 48.5 V50.5 M13.5 32 H15.5 M48.5 32 H50.5"/></svg></span>
@@ -547,12 +608,12 @@
         </div>
         <div class="rule">
           <span class="rule__icon rule__icon--duo"><svg viewBox="0 0 64 64" aria-hidden="true"><rect class="f" x="10" y="26" width="32" height="30" rx="5"/><rect x="10" y="26" width="32" height="30" rx="5"/><rect x="12" y="18" width="28" height="8" rx="2.5"/><path d="M10 36 H42 M10 48 H42"/><path d="M50 6 V26 M41.3 11 L58.7 21 M41.3 21 L58.7 11 M46.5 7.5 L50 10 L53.5 7.5 M46.5 24.5 L50 22 L53.5 24.5"/></svg></span>
-          <dt>Хранение</dt><dd>Открытую банку&nbsp;— в&nbsp;холодильник, до&nbsp;30&nbsp;дней</dd>
+          <dt>Хранение</dt><dd><span class="store"><b>До вскрытия:</b> 0…+25&nbsp;°C, срок годности 1&nbsp;год</span><span class="store"><b>После вскрытия:</b> 0…+6&nbsp;°C, не&nbsp;более 30&nbsp;дней</span><span class="store store--warn">Не&nbsp;замораживать</span></dd>
         </div>
       </dl>
     <div class="stick-banner" data-reveal>
-        <div class="stick-banner__eq">1&nbsp;стик = 1&nbsp;ст.&nbsp;ложка = 1&nbsp;день</div>
-        <p>Банка 500&nbsp;г&nbsp;— уже в&nbsp;продаже. Стики&nbsp;— порционный формат, скоро в&nbsp;продаже.</p>
+        <div class="stick-banner__eq">1&nbsp;ст.&nbsp;ложка = 1&nbsp;день</div>
+        <p>Банка 500&nbsp;г&nbsp;— уже в&nbsp;продаже в&nbsp;салонах ОРТЕКИ и&nbsp;онлайн.</p>
     </div>
   </div>
 </section>
@@ -617,6 +678,7 @@
         <li class="qitem" data-reveal><span class="qitem__n">01</span><div><h3>Производство по&nbsp;стандарту ИСО&nbsp;22000</h3><p>Международная система менеджмента безопасности пищевой продукции</p></div></li>
         <li class="qitem" data-reveal><span class="qitem__n">02</span><div><h3>Натуральные продукты</h3><p>Натуральный ягодный или фруктовый сок в&nbsp;каждом вкусе</p></div></li>
         <li class="qitem" data-reveal><span class="qitem__n">03</span><div><h3>Сертификат «Халяль»</h3><p>Продукт соответствует требованиям стандарта «Халяль»</p></div></li>
+        <li class="qitem" data-reveal><span class="qitem__n">04</span><div><h3>Без ГМО</h3><p>В&nbsp;составе нет генетически модифицированных ингредиентов</p></div></li>
       </ol>
       <a class="btn btn--brand" href="#taste" data-reveal>Купить
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
@@ -683,7 +745,7 @@
 <div class="sticky-buy" id="stickyBuy" aria-hidden="true">
   <div class="sticky-buy__info">
     <span class="sticky-buy__name" id="stickyName">Яблоко · для суставов</span>
-    <span class="sticky-buy__price">2&nbsp;990&nbsp;₽</span>
+    <span class="sticky-buy__price">4&nbsp;999&nbsp;₽</span>
   </div>
   <a class="btn btn--accent btn--sm" href="#taste" tabindex="-1">Купить</a>
 </div>

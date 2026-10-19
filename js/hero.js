@@ -55,7 +55,6 @@
   const chipsEl = $('#chips');
   const picker = $('#picker');
   const buyName = $('#buyName');
-  const cubes = [...stage.querySelectorAll('.cube')];
 
   let current = -1;
   let elapsed = 0;
@@ -81,7 +80,7 @@
         <svg class="picker__ring" viewBox="0 0 56 56" aria-hidden="true">
           <circle class="bg" cx="28" cy="28" r="26"/><circle class="fg" cx="28" cy="28" r="26"/>
         </svg>
-        <img src="img/fruit-${f.id}.png" alt="" width="56" height="56">
+        <img src="img/jar-${f.id}.png" alt="" width="56" height="56">
       </span>
       <span class="picker__name">${f.name}</span>
       <span class="picker__line">${f.lineShort}</span>`;
@@ -189,11 +188,6 @@
         { transform: 'none' }, { transform: 'translateY(-6px) scale(1.03)' }, { transform: 'none' },
       ], { duration: 600, delay: 150 + i * 70, easing: 'ease-in-out' }));
     }
-
-    // Желейные кубики «трясутся»
-    if (!first) cubes.forEach((c, i) => anim(c, [
-      { scale: '1 1' }, { scale: '1.2 .8' }, { scale: '.9 1.12' }, { scale: '1.05 .96' }, { scale: '1 1' },
-    ], { duration: 750, delay: 120 + i * 60, easing: 'ease-out' }));
 
     // Выбор и покупка
     pickerItems.forEach((b, i) => {
