@@ -1533,3 +1533,6 @@
 @media (max-width: 1024px) { .memo__spoon { width: 74%; right: -4%; } }
 @media (max-width: 600px) { .memo__spoon { width: 100%; right: -10%; } }
 .memo__spoon { filter: none; }
+/* Преимущества отбиты от первого экрана */
+.perks { margin-top: 56px; }
+@media (max-width: 600px) { .perks { margin-top: 36px; } }
