@@ -28,8 +28,8 @@
 
   /* Типографика */
   --f-body: 'Onest', system-ui, -apple-system, 'Segoe UI', sans-serif;
-  --f-display: 'Unbounded', 'Onest', system-ui, sans-serif;
-  --f-serif: 'Playfair Display', Georgia, serif;
+  --f-display: 'Montserrat', 'Onest', system-ui, sans-serif;
+  --f-serif: 'Montserrat', 'Onest', system-ui, sans-serif;
 
   /* Ритм */
   --gutter: 32px;
@@ -240,7 +240,7 @@ button { font: inherit; color: inherit; }
 }
 .t-serif {
   font-family: var(--f-serif);
-  font-style: italic;
+  font-style: normal;
   font-weight: 500;
   font-size: 1.08em;
   color: var(--accent-deep);

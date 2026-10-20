@@ -96,7 +96,7 @@ main > section:not(.hero), .footer {
 }
 .fact__num small {
   font-family: var(--f-serif);
-  font-style: italic;
+  font-style: normal;
   font-weight: 500;
   font-size: .32em;
   letter-spacing: 0;
@@ -360,7 +360,7 @@ main > section:not(.hero), .footer {
   background: var(--sand);
 }
 .bento__expert blockquote { margin: 0; }
-.bento__expert blockquote p { margin: 0; font-family: var(--f-serif); font-style: italic; font-size: 20px; line-height: 1.4; color: var(--ink); }
+.bento__expert blockquote p { margin: 0; font-family: var(--f-serif); font-style: normal; font-size: 20px; line-height: 1.4; color: var(--ink); }
 .bento__expert footer { margin-top: 14px; display: flex; flex-direction: column; font-size: 14px; color: var(--ink-mute); }
 .bento__expert footer b { color: var(--ink); font-size: 15px; }
 
@@ -568,7 +568,7 @@ main > section:not(.hero), .footer {
   background: var(--brand);
   color: #fff;
   font-family: var(--f-serif);
-  font-style: italic;
+  font-style: normal;
   font-size: 16px;
   text-transform: none;
   letter-spacing: 0;
@@ -953,7 +953,7 @@ main > section:not(.hero), .footer {
 .type__num {
   flex: 0 0 80px;
   font-family: var(--f-serif);
-  font-style: italic;
+  font-style: normal;
   font-weight: 600;
   font-size: 52px;
   line-height: 1;
