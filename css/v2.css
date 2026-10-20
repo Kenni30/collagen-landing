@@ -1536,3 +1536,7 @@
 /* Преимущества отбиты от первого экрана */
 .perks { margin-top: 56px; }
 @media (max-width: 600px) { .perks { margin-top: 36px; } }
+/* Стикер «Нежное ягодное желе»: текст крупнее */
+.jelly__sticker { font-size: 17px; line-height: 1.2; }
+.jelly__sticker b { font-size: 22px; font-weight: 800; letter-spacing: .01em; }
+@media (max-width: 1024px) { .jelly__sticker { font-size: 14px; } .jelly__sticker b { font-size: 18px; } }
