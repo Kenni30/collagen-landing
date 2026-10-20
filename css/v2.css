@@ -1336,3 +1336,6 @@
 .taste .flavor__price { color: var(--ink); }
 .taste .flavor__btn { background: var(--brand); color: #fff; font-weight: 600; }
 .taste .flavor__btn:hover { background: var(--brand-deep); }
+/* Комплексный подход: текст под заголовком */
+.cp .section__head { flex-direction: column; align-items: flex-start; gap: 20px; }
+.cp .section__head .section__aside { max-width: 640px; margin: 0; }
