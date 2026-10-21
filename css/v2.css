@@ -1550,3 +1550,23 @@
 /* История: полоса из двух частей (без НИКАМЕД) */
 .hj__strip { grid-template-columns: 1fr 1fr; }
 @media (max-width: 1024px) { .hj__strip { grid-template-columns: minmax(0, 1fr); } }
+
+/* История бренда — вариант C «карточка-ярлык» */
+.hc { display: grid; grid-template-columns: minmax(300px, 400px) minmax(0, 1fr); gap: 64px; align-items: start; }
+.hc__card { display: flex; flex-direction: column; gap: 18px; padding: 22px; border-radius: 26px; background: #fff; box-shadow: 0 0 0 1px var(--line); }
+.hc__badge { display: flex; flex-direction: column; gap: 12px; padding: 22px 24px; border-radius: 20px; color: #fff;
+  background: radial-gradient(70% 80% at 100% 0%, rgba(255,255,255,.14) 0%, transparent 60%), linear-gradient(160deg, var(--brand-g1), var(--brand-g2)); }
+.hc__badge .brand-logo { height: 22px; color: #fff; }
+.hc__badge b { font-family: var(--f-display); font-weight: 700; font-size: 18px; line-height: 1.3; }
+.hc__doc { margin: 0; }
+.hc__doc img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 18px; }
+.hc__doc figcaption { margin-top: 14px; }
+.hc__doc figcaption b { display: block; font-family: var(--f-display); font-weight: 700; font-size: 17px; }
+.hc__doc figcaption span { font-size: 14px; line-height: 1.45; color: var(--ink-mute); }
+.hc__btn { justify-content: center; width: 100%; }
+.hc__text p { margin: 0; font-size: 17px; line-height: 1.65; color: var(--ink-soft); }
+.hc__text p + p { margin-top: 16px; }
+.hc__sign { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; margin-top: 26px !important; font-size: 18px; color: var(--ink) !important; }
+.hc__sign .brand-logo { height: 24px; color: var(--brand); }
+@media (max-width: 1024px) { .hc { grid-template-columns: minmax(0, 1fr); gap: 32px; } .hc__card { max-width: 520px; } }
+@media (max-width: 600px) { .hc__card { padding: 16px; } .hc__badge { padding: 18px; } .hc__badge b { font-size: 16px; } .hc__text p { font-size: 16px; } }
