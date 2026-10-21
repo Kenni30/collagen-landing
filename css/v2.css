@@ -1540,3 +1540,10 @@
 .jelly__sticker { font-size: 17px; line-height: 1.2; }
 .jelly__sticker b { font-size: 22px; font-weight: 800; letter-spacing: .01em; }
 @media (max-width: 1024px) { .jelly__sticker { font-size: 14px; } .jelly__sticker b { font-size: 18px; } }
+/* Мобильная: карточки комплексов в «Зачем нужен коллаген» — фото сверху, текст снизу */
+@media (max-width: 600px) {
+  .sci-grid--even .sci--joints, .sci-grid--even .sci--veins { grid-template-columns: minmax(0, 1fr); min-height: 0; }
+  .sci-grid--even .sci--joints .sci__photo, .sci-grid--even .sci--veins .sci__photo { order: 0; height: 180px; }
+  .sci-grid--even .sci__photo img { height: 100%; object-fit: cover; }
+  .sci-grid--even .sci__body { padding: 20px; }
+}
