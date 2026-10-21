@@ -1570,3 +1570,16 @@
 .hc__sign .brand-logo { height: 24px; color: var(--brand); }
 @media (max-width: 1024px) { .hc { grid-template-columns: minmax(0, 1fr); gap: 32px; } .hc__card { max-width: 520px; } }
 @media (max-width: 600px) { .hc__card { padding: 16px; } .hc__badge { padding: 18px; } .hc__badge b { font-size: 16px; } .hc__text p { font-size: 16px; } }
+/* История: уравновесить карточку и текст, шильдик по левому краю */
+.hc { align-items: center; }
+.hc__quote { margin-bottom: 24px !important; font-family: var(--f-display); font-weight: 300; font-size: clamp(22px, 2.2vw, 30px) !important; line-height: 1.3 !important; letter-spacing: -.01em; color: var(--brand-deep) !important; }
+.hc__quote::before { content: '«'; } .hc__quote::after { content: '»'; }
+.hc__badge { align-items: flex-start; }
+.hc__badge .brand-logo { align-self: flex-start; height: 28px; width: auto; }
+.hc__badge b { font-size: 16px; font-weight: 600; line-height: 1.35; }
+.hc__doc figcaption { margin-top: 12px; }
+.hc__doc figcaption b { line-height: 1.25; }
+.hc__doc figcaption span { display: block; margin-top: 2px; line-height: 1.3; }
+@media (max-width: 600px) { .hc__badge .brand-logo { height: 24px; } .hc__badge b { font-size: 15px; } .hc__quote { font-size: 21px !important; } }
+.hb__photo--full img.hb__shot { object-position: 52% 35%; }
+@media (max-width: 1024px) { .hb__photo--full img.hb__shot { object-position: 52% 30%; } }
