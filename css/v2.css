@@ -1547,3 +1547,6 @@
   .sci-grid--even .sci__photo img { height: 100%; object-fit: cover; }
   .sci-grid--even .sci__body { padding: 20px; }
 }
+/* История: полоса из двух частей (без НИКАМЕД) */
+.hj__strip { grid-template-columns: 1fr 1fr; }
+@media (max-width: 1024px) { .hj__strip { grid-template-columns: minmax(0, 1fr); } }
