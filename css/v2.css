@@ -1590,3 +1590,11 @@
 @media (min-width: 1025px) { .hc__text { max-width: 680px; } .hc__text p:not(.hc__quote) { font-size: 18px; } }
 @media (min-width: 1025px) { .hc__quote { font-size: clamp(30px, 2.7vw, 40px) !important; margin-bottom: 34px !important; } }
 @media (min-width: 1025px) { .hc__quote { font-size: clamp(28px, 2.5vw, 36px) !important; margin-bottom: 30px !important; } }
+/* История: текст слева, карточка с врачом справа */
+.hc { grid-template-columns: minmax(0, 1fr) minmax(300px, 400px); }
+.hc__card { order: 2; }
+.hc__text { order: 1; }
+@media (max-width: 1024px) { .hc { grid-template-columns: minmax(0, 1fr); } .hc__card { order: 0; } }
+/* Баннер: новое фото */
+.hb__photo--full img.hb__shot { object-position: 45% 30%; }
+@media (max-width: 1024px) { .hb__photo--full img.hb__shot { object-position: 45% 25%; } }
